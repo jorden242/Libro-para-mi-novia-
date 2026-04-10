@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Nuestro Libro 💖</title>
+
+<style>
+body {
+    margin: 0;
+    background: linear-gradient(#ffd6e7, #fff0f5);
+    font-family: 'Georgia', serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Libro */
+.book {
+    width: 350px;
+    height: 500px;
+    position: relative;
+    perspective: 1500px;
+}
+
+.page {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    transform-origin: left;
+    transition: transform 1s;
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+/* Decoración */
+.page::before {
+    content: "💖 ✨ 💕";
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 18px;
+}
+
+h1 {
+    color: #ff4d88;
+    text-align: center;
+}
+
+p {
+    font-size: 18px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Botón */
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+    background: #ff4d88;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* Páginas en orden */
+#p1 { z-index: 5; }
+#p2 { z-index: 4; }
+#p3 { z-index: 3; }
+#p4 { z-index: 2; }
+#p5 { z-index: 1; }
+
+.flipped {
+    transform: rotateY(-180deg);
+}
+</style>
+</head>
+
+<body>
+
+<div class="book">
+
+    <!-- Página 1 -->
+    <div class="page" id="p1">
+        <h1>✨ Nuestro Libro ✨</h1>
+        <p>Para la niña más hermosa de este mundo 💖</p>
+        <p>[E Y K]</p>
+        <button onclick="nextPage(1)">Abrir 💕</button>
+    </div>
+
+    <!-- Página 2 -->
+    <div class="page" id="p2">
+        <h1>🌸 Todo empezó contigo</h1>
+        <p>Desde que llegaste a mi vida, todo cambió…</p>
+        <p>Hiciste que mis días fueran más bonitos y mis noches más tranquilas 🥺</p>
+        <button onclick="nextPage(2)">Siguiente ➡</button>
+    </div>
+
+    <!-- Página 3 -->
+    <div class="page" id="p3">
+        <h1>💖 Lo que siento</h1>
+        <p>No sé cómo explicarlo, pero contigo todo se siente diferente…</p>
+        <p>Me encanta tu sonrisa, tu voz, tu forma de ser… todo de ti 💕</p>
+        <button onclick="nextPage(3)">Siguiente ➡</button>
+    </div>
+
+    <!-- Página 4 -->
+    <div class="page" id="p4">
+        <h1>🌹 Nosotros</h1>
+        <p>Contigo aprendí lo que es querer de verdad…</p>
+        <p>Cada momento contigo es un recuerdo que quiero guardar para siempre ❤️</p>
+        <button onclick="nextPage(4)">Siguiente ➡</button>
+    </div>
+
+    <!-- Página 5 -->
+    <div class="page" id="p5">
+        <h1>💞 Para siempre</h1>
+        <p>No sé qué nos depare el futuro…</p>
+        <p>Pero sí sé que quiero que sea contigo 🥺💖</p>
+        <p><b>Te amo muchísimo ❤️</b></p>
+    </div>
+
+</div>
+
+<script>
+function nextPage(page) {
+    document.getElementById("p" + page).classList.add("flipped");
+}
+</script>
+
+</body>
+</html>
